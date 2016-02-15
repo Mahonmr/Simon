@@ -1,0 +1,3 @@
+exports.simon = function(goal) {
+  
+};
