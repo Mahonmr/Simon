@@ -1,0 +1,35 @@
+#blue{
+ height:100px;
+ width:95px;
+ background-color:blue;
+ border-radius:4px;
+ text-align:center;
+ margin-left:132px;
+}
+
+#green{
+ height:100px;
+ width:95px;
+ background-color:green;
+ border-radius:4px;
+ text-align:center;
+ margin-left:132px;
+}
+
+#red {
+ height:100px;
+ width:95px;
+ background-color:red;
+ border-radius:4px;
+ text-align:center;
+ margin-left:132px;
+}
+
+#yellow{
+ height:100px;
+ width:95px;
+ background-color:yellow;
+ border-radius:4px;
+ text-align:center;
+ margin-left:132px;
+}

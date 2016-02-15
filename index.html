@@ -2,12 +2,13 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/simon.css">
     <script type="text/javascript" src="build/js/app.js"></script>
     <title>Simon</title>
   </head>
   <body>
 
-    <div class="simonSays">
+    <div id="simonSays">
 
     </div>
 
@@ -19,7 +20,22 @@
 
     <form id="new-game" class="new-game">
       <button type="submit" name="button">new game</button>
-    </form>
+    </form><br>
+
+    <table id="color">
+      <tr>
+        <td class="color" id="red" value="red"></td>
+      </tr>
+      <tr>
+        <td class ="color" id="yellow" value="yellow"></td>
+      </tr>
+      <tr>
+        <td class="color" id="blue" value="blue"></td>
+      </tr>
+      <tr>
+        <td class ="color" id="green" value="green"></td>
+      </tr>
+    </table>
 
   </body>
 </html>
