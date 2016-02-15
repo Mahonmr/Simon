@@ -14,7 +14,19 @@ $(document).ready(function(){
   });
 
   $(".color").click(function() {
-    new_game.click_color(this.id)
+    new_game.clickColor(this.id)
       console.log(new_game)
   });
 });
+
+// when # of user clicks = length of simonList -->
+// if match --> if playerList === simonList;
+// clear playerList --> playerList = [];
+// add a new random color to simonList array --> simonList.says();
+
+if (playerList === simonList) {
+  var playerList = [];
+  return simonList.says();
+} else {
+  return ("Simon says FAIL");
+}
