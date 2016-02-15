@@ -1,21 +1,16 @@
-var pingPong = require('./../js/ping-pong.js').pingPong;
+var Simon = require('./../js/simon.js').Simon;
+var says = require('./../js/simon.js').says;
 
 $(document).ready(function(){
-  $('#ping-pong').submit(function(event){
+  $('#answer').submit(function(event){
     event.preventDefault();
-    var goal = $('#goal').val();
-    var output = pingPong(goal);
-    output.forEach(function(element){
-      $('#solution').append("<li>" + element + "</li>");
-    });
+    new_game.says();
+      $('#simonSays').append(this.simonList);
   });
-});
 
-$(document).ready(function(){
-  $('#signup').submit(function(event){
+  $('#new-game').submit(function(event){
     event.preventDefault();
-    var email = $('#email').val();
-    $('#signup').hide();
-    $('#solution').prepend('<p>Thank you, ' + email + ' has been added to our list!</p>');
+    new_game = new Simon();
+    new_game.says();
   });
 });

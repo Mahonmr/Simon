@@ -1,12 +1,16 @@
-var simon = require('./../js/simon.js').simon;
+var Simon = require('./../js/simon.js').Simon;
+var says = require('./../js/simon.js').says;
 
-// $(document).ready(function(){
-//   $('#ping-pong').submit(function(event){
-//     event.preventDefault();
-//     var goal = $('#goal').val();
-//     var output = pingPong(goal);
-//     output.forEach(function(element){
-//       $('#solution').append("<li>" + element + "</li>");
-//     });
-//   });
-// });
+$(document).ready(function(){
+  $('#answer').submit(function(event){
+    event.preventDefault();
+    new_game.says();
+      $('#simonSays').append(this.simonList);
+  });
+
+  $('#new-game').submit(function(event){
+    event.preventDefault();
+    new_game = new Simon();
+    new_game.says();
+  });
+});
