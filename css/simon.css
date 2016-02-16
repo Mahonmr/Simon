@@ -1,6 +1,6 @@
 #blue{
- height:100px;
- width:95px;
+ height:300px;
+ width:300px;
  background-color:blue;
  border-radius:4px;
  text-align:center;
@@ -8,8 +8,8 @@
 }
 
 #green{
- height:100px;
- width:95px;
+ height:300px;
+ width:300px;
  background-color:green;
  border-radius:4px;
  text-align:center;
@@ -17,8 +17,8 @@
 }
 
 #red {
- height:100px;
- width:95px;
+ height:300px;
+ width:300px;
  background-color:red;
  border-radius:4px;
  text-align:center;
@@ -26,8 +26,8 @@
 }
 
 #yellow{
- height:100px;
- width:95px;
+ height:300px;
+ width:300px;
  background-color:yellow;
  border-radius:4px;
  text-align:center;

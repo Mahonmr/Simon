@@ -17,9 +17,6 @@ Simon.prototype.clickColor = function(color) {
 };
 
 Simon.prototype.checkLength = function() {
-  console.log(this.playerList.length);
-  console.log(this.simonList.length);
-  console.log(this.playerList.length === this.simonList.length);
   return (this.playerList.length === this.simonList.length);
 };
 
@@ -43,17 +40,18 @@ $(document).ready(function(){
     event.preventDefault();
     new_game = new Simon();
     new_game.says();
-    console.log(new_game)
+    $('#color').find('#' + new_game.simonList[0]).fadeOut(400).fadeIn(400);
   });
 
   $(".color").click(function() {
-    new_game.clickColor(this.id)
+    new_game.clickColor(this.id);
     if (new_game.checkLength()) {
       if (new_game.compareList(new_game.simonList.length)) {
         new_game.says();
-        $.each(new_game.simonList, function(index, value) {
-
-          $('#simonSays').append(value);
+        $.each(new_game.simonList, function(i) {
+          setTimeout(function () {
+            $('#color').find('#' + new_game.simonList[i]).fadeOut(400).fadeIn(400);
+          }, i * 400);
         });
       } else {
         $('#simonSays').append("You lost");
