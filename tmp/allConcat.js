@@ -9,9 +9,17 @@ $(document).ready(function(){
   });
 
   $(".color").click(function() {
-    new_game.clickColor(this.id);
-    $.each(new_game.simonList, function(index, value) {
-      $('#simonSays').append(value);
-    });
+    new_game.clickColor(this.id)
+    if (new_game.checkLength()) {
+      if (new_game.compareList(new_game.simonList.length)) {
+        new_game.says();
+        $.each(new_game.simonList, function(index, value) {
+
+          $('#simonSays').append(value);
+        });
+      } else {
+        $('#simonSays').append("You lost");
+      }
+    }
   });
 });

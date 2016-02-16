@@ -13,47 +13,20 @@ Simon.prototype.says = function() {
 
 Simon.prototype.clickColor = function(color) {
   this.playerList.push(color);
-  if(this.playerList.length === this.simonList.length) {
-    test = this.compareList(this.playerList.length)
-    if(test) {
-      this.playerList = [];
-       this.says();
-    } else {
-      return false;
-    }
-  }
+};
+
+Simon.prototype.checkLength = function() {
+  return (this.playerList.length === this.simonList.length);
 };
 
 Simon.prototype.compareList = function (length) {
-  var i = 0;
-  while (i <= length) {
+  for(var i = 0; i <= length; i += 1) {
     if (this.playerList[i] != this.simonList[i]) {
       return false;
     }
-    i += 1;
   }
+  this.playerList = [];
   return true;
 };
-
-Simon.prototype.result  = function (answer) {
-  if (playerList === simonList) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
-// function animate(sequence) {
-// 	var i = 0;
-// 	var interval = setInterval(function() {
-// 		lightUp(sequence[i]);
-//
-//         i++;
-//         if (i >= sequence.length) {
-// 			clearInterval(interval);
-//         }
-//    }, 600);
-// }
-
 
 exports.Simon = Simon;
