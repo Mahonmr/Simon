@@ -5,15 +5,35 @@ var Simon = function() {
   this.playerList = [];
 };
 
-Simon.prototype.says = function () {
+Simon.prototype.says = function() {
   var color;
   color = this.colors[Math.floor(Math.random()*this.colors.length)];
   this.simonList.push(color);
   return this.simonList;
 };
 
-Simon.prototype.click_color = function (color) {
+Simon.prototype.clickColor = function(color) {
   this.playerList.push(color);
+  if(this.playerList.length === this.simonList.length) {
+    test = this.compareList(this.playerList.length)
+    if(test) {
+      this.playerList = [];
+       this.says();
+    } else {
+      return false;
+    }
+  }
+};
+
+Simon.prototype.compareList = function (length) {
+  var i = 0;
+  while (i <= length) {
+    if (this.playerList[i] != this.simonList[i]) {
+      return false;
+    }
+    i += 1;
+  }
+  return true;
 };
 
 Simon.prototype.result  = function (answer) {
@@ -43,34 +63,19 @@ exports.Simon = Simon;
 var Simon = require('./../js/simon.js').Simon;
 
 $(document).ready(function(){
-  $('#answer').submit(function(event){
-    event.preventDefault();
-
-    $('#simonSays').append(this.playerList.result());
-  });
-
   $('#new-game').submit(function(event){
     event.preventDefault();
     new_game = new Simon();
     new_game.says();
+    console.log(new_game)
   });
 
   $(".color").click(function() {
-    new_game.click_color(this.id)
-      console.log(new_game)
+    new_game.clickColor(this.id);
+    $.each(new_game.simonList, function(index, value) {
+      $('#simonSays').append(value);
+    });
   });
 });
-
-// when # of user clicks = length of simonList -->
-// if match --> if playerList === simonList;
-// clear playerList --> playerList = [];
-// add a new random color to simonList array --> simonList.says();
-
-if (playerList === simonList) {
-  var playerList = [];
-  return simonList.says();
-} else {
-  return ("Simon says FAIL");
-}
 
 },{"./../js/simon.js":1}]},{},[2]);

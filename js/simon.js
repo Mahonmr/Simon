@@ -4,30 +4,36 @@ var Simon = function() {
   this.playerList = [];
 };
 
-Simon.prototype.says = function () {
+Simon.prototype.says = function() {
   var color;
   color = this.colors[Math.floor(Math.random()*this.colors.length)];
   this.simonList.push(color);
   return this.simonList;
 };
 
-Simon.prototype.clickColor = function (color) {
+Simon.prototype.clickColor = function(color) {
   this.playerList.push(color);
   if(this.playerList.length === this.simonList.length) {
-    Simon.compareList(playerList.length);
+    test = this.compareList(this.playerList.length)
+    if(test) {
+      this.playerList = [];
+       this.says();
+    } else {
+      return false;
+    }
   }
 };
 
 Simon.prototype.compareList = function (length) {
   var i = 0;
-  while (i =< length) {
+  while (i <= length) {
     if (this.playerList[i] != this.simonList[i]) {
       return false;
     }
     i += 1;
   }
   return true;
-}
+};
 
 Simon.prototype.result  = function (answer) {
   if (playerList === simonList) {
