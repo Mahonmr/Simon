@@ -10,7 +10,8 @@ skills allowed me to write the game in 36 lines of code.
 
 Install Simon app by cloning this repository:
 ```
-https://github.com/Mahonmr/CodeReviewPizzaApp.git
+https://github.com/Mahonmr/Simon.git  
+open up index.html in browser and play!
 ```
 
 ##License
